@@ -7,6 +7,6 @@
 #include <stdio.h>
 
 int _printf(const char *format, ...);
-int _string(char *s);
+int _strlen(char *s);
 
 #endif

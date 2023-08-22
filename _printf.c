@@ -5,7 +5,7 @@
  * @format:const character string
  * Return: integer Always
  */
-int _printf(const char *format, ...);
+
 int _printf(const char *format, ...)
 {
 	va_list jul;
@@ -38,7 +38,12 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				myString = va_arg(jul, char *);
-				length = _string(myString);
+				if (myString == NULL)
+				{
+					myString = "(null)";
+				}
+				length = _strlen(myString);
+				write(1, myString, length);
 				count += length;
 			}
 			else if (format[i] == '%')
