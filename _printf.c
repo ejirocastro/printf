@@ -12,9 +12,12 @@ int _printf(const char *format, ...)
 	int i, length, count;
 	char myChar, *myString;
 
-	va_start(jul, format);
-	if (format == NULL)
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+
+	va_start(jul, format);
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
