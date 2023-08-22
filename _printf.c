@@ -25,6 +25,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
+			if (format[i] == '\0')
+			{
+				return (-1);
+			}
 			if (format[i] == 'c')
 			{
 				myChar = va_arg(jul, int);
@@ -34,6 +38,10 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				myString = va_arg(jul, char *);
+				if (myString == NULL)
+				{
+					myString = "(null)";
+				}
 				length = _strlen(myString);
 				write(1, myString, length);
 				count += length;
