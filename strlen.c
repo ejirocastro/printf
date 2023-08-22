@@ -7,7 +7,7 @@
  */
 int _string(char *s)
 {
-	int i, length = 0;
+	int i;
 
 	if (s == NULL)
 	{
@@ -15,9 +15,8 @@ int _string(char *s)
 	}
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		length++;
+		write(1, s[i], 1);
 	}
-	return(write(1, s, length));
-	
-	
+	return (i);
+
 }
