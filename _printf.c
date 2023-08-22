@@ -38,12 +38,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				myString = va_arg(jul, char *);
-				if (myString == NULL)
-				{
-					myString = "(null)";
-				}
-				length = _strlen(myString);
-				write(1, myString, length);
+				length = _string(myString);
 				count += length;
 			}
 			else if (format[i] == '%')
