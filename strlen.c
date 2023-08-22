@@ -1,13 +1,23 @@
 #include "main.h"
 
 /**
- * _strlen - This check for the length of the given string
+ * _string - This check for the length of the given string
  * @s: This collects a string pointer
  * Return: a value.
  */
-int _strlen(char *s)
+int _string(char *s)
 {
-	int length = strlen(s);
+	int i, length = 0;
 
-	return (length);
+	if (s == NULL)
+	{
+		s = "(null)";
+	}
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		length++;
+	}
+	return(write(1, s, length));
+	
+	
 }
