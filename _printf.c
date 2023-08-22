@@ -5,7 +5,7 @@
  * @format:const character string
  * Return: integer Always
  */
-
+int _printf(const char *format, ...);
 int _printf(const char *format, ...)
 {
 	va_list jul;
