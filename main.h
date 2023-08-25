@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <stdio.h>
 
+#define BUFFERSIZE 1024
+
 int _printf(const char *format, ...);
 int _strlen(char *s);
 
